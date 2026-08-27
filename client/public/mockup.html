@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TANAL SA LOGEMENT - Mockup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#059669',
+            accent: '#dc2626',
+            dark: '#0f172a',
+            light: '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .nav-gradient-border { position: relative; }
+    .nav-gradient-border::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-xl shadow-blue-900/5 nav-gradient-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+          <div class="relative w-12 h-12">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl blur-lg opacity-40"></div>
+            <div class="relative w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">T</div>
+          </div>
+          <div>
+            <span class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent block leading-tight">TANAL SA LOGEMENT</span>
+            <span class="text-xs text-gray-500 font-medium">Choisis ton logement</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="flex items-center gap-1">
+            <a href="#" class="px-3 py-2 text-sm font-medium text-blue-600 relative nav-link-underline">Accueil</a>
+            <a href="#annonces" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 relative nav-link-underline">Annonces</a>
+            <a href="#colocation" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 relative nav-link-underline">Colocation</a>
+            <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 relative nav-link-underline">Contact</a>
+          </div>
+          <div class="flex items-center gap-3 ml-4">
+            <a href="#" class="px-5 py-2.5 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-100/80 transition-all duration-300 hover:text-blue-600">Connexion</a>
+            <a href="#" class="relative px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-xl overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">Inscription</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-dark text-white overflow-hidden pt-20">
+    <div class="absolute inset-0">
+      <img src='https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=1600&q=80' alt='Accueil' class='w-full h-full object-cover opacity-100' />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div class="mb-6 inline-block animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          <span class="text-sm text-white/90 font-medium">Plateforme #1 de logement étudiant à Dakar</span>
+        </div>
+      </div>
+      <h1 class="text-4xl md:text-7xl font-bold mb-6 animate-fade-in-up leading-tight">
+        Trouvez votre <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">logement idéal</span> à Dakar
+      </h1>
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 200ms;">
+        TANAL SA LOGEMENT - Choisis ton logement. Recherchez, visitez et emménagez en toute simplicité.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 400ms;">
+        <a href="#annonces" class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-bold hover:from-yellow-300 hover:to-yellow-400 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          Voir les annonces
+        </a>
+        <a href="#" class="inline-flex items-center justify-center bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a5 5 0 0111.707-2.293A5 5 0 0119 20H3z"></path></svg>
+          S'inscrire gratuitement
+        </a>
+      </div>
+      <div class="mt-12 flex items-center justify-center gap-8 text-sm text-gray-300 animate-fade-in-up" style="animation-delay: 600ms;">
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Annonces vérifiées</span></div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Paiement sécurisé</span></div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Support 24/7</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
+    <form class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 bg-gray-50/50 hover:bg-white hover:border-gray-300">
+          <option>Type de logement</option>
+          <option>Chambre</option>
+          <option>Studio</option>
+          <option>Appartement</option>
+        </select>
+        <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 bg-gray-50/50 hover:bg-white hover:border-gray-300">
+          <option>Quartier</option>
+          <option>Mermoz</option>
+          <option>Plateau</option>
+          <option>Almadies</option>
+          <option>Médina</option>
+        </select>
+        <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 bg-gray-50/50 hover:bg-white hover:border-gray-300">
+          <option>Prix max</option>
+          <option>50 000 FCFA</option>
+          <option>100 000 FCFA</option>
+          <option>200 000 FCFA</option>
+          <option>500 000 FCFA</option>
+        </select>
+        <button type="submit" class="w-full flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-200 hover:shadow-blue-300 active:scale-[0.98]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          Rechercher
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Steps -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Comment ça marche ?</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Trois étapes simples pour trouver votre logement idéal à Dakar</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">1</div>
+        </div>
+        <div class="mt-8 mb-6 inline-flex items-center justify-center w-20 h-20 bg-blue-50 text-primary rounded-2xl">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Recherchez</h3>
+        <p class="text-gray-600 leading-relaxed">Parcourez des centaines d'annonces vérifiées à Dakar. Filtrez par quartier, type et budget.</p>
+      </div>
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">2</div>
+        </div>
+        <div class="mt-8 mb-6 inline-flex items-center justify-center w-20 h-20 bg-blue-50 text-primary rounded-2xl">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Visitez</h3>
+        <p class="text-gray-600 leading-relaxed">Réservez une visite en un clic et rencontrez le propriétaire. Confirmez votre créneau en ligne.</p>
+      </div>
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">3</div>
+        </div>
+        <div class="mt-8 mb-6 inline-flex items-center justify-center w-20 h-20 bg-blue-50 text-primary rounded-2xl">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Emménagez</h3>
+        <p class="text-gray-600 leading-relaxed">Trouvez votre nouveau logement et emménagez en toute sérénité. accompagnement personnalisé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pourquoi choisir TANAL SA LOGEMENT ?</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Nous offrons une expérience unique pour la recherche de logement à Dakar</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
+          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Annonces vérifiées</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Toutes nos annonces sont validées par notre équipe pour éviter les arnaques.</p>
+        </div>
+        <div class="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
+          <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Gestion des visites</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Réservez et gérez vos visites directement depuis votre tableau de bord.</p>
+        </div>
+        <div class="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
+          <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Support 24/7</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Notre équipe est disponible à tout moment pour vous accompagner.</p>
+        </div>
+        <div class="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
+          <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Sécurisé</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Vos données sont protégées et vos transactions sont sécurisées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Annonces récentes -->
+  <section id="annonces" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Annonces récentes</h2>
+      <p class="text-lg text-gray-600">Découvrez les dernières opportunités de logement à Dakar</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Carte 1 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="relative h-48">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Appartement" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              Premium
+            </span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1 line-clamp-1">Superbe appartement à Mermoz</h3>
+          <p class="text-gray-600 text-sm mb-3 line-clamp-2">Appartement meublé de 3 pièces avec vue sur mer, proche de toutes commodités.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">150.000 FCFA/mois</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Mermoz</span>
+          </div>
+        </div>
+      </div>
+      <!-- Carte 2 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="relative h-48">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80" alt="Studio" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1 line-clamp-1">Studio moderne au Plateau</h3>
+          <p class="text-gray-600 text-sm mb-3 line-clamp-2">Studio entièrement équipé, idéal pour étudiant, situé en plein cœur du Plateau.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">85.000 FCFA/mois</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Plateau</span>
+          </div>
+        </div>
+      </div>
+      <!-- Carte 3 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="relative h-48">
+          <img src="https://images.unsplash.com/photo-1493809842364-78817add8ff4?w=600&q=80" alt="Chambre" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              Premium
+            </span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1 line-clamp-1">Chambre colocation Almadies</h3>
+          <p class="text-gray-600 text-sm mb-3 line-clamp-2">Chambre spacieuse dans une colocation conviviale, proche des universités.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">45.000 FCFA/mois</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Almadies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <a href="#" class="inline-flex items-center justify-center bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-blue-700 transition transform hover:scale-105 shadow-lg hover:shadow-xl">Voir toutes les annonces</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">TANAL SA LOGEMENT</h3>
+          <p class="text-gray-300">Votre partenaire de confiance pour la recherche de logement à Dakar.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+          <ul class="space-y-2">
+            <li><a href="#annonces" class="text-gray-300 hover:text-white transition">Annonces</a></li>
+            <li><a href="#colocation" class="text-gray-300 hover:text-white transition">Colocation</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition">Inscription</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="text-gray-300">contact@tanal-sa-logement.sn</li>
+            <li class="text-gray-300">+221 78 136 59 25</li>
+            <li class="text-gray-300">Dakar, Sénégal</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44 0-.795-.644-1.44-1.439-1.44z"></path></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center">
+        <p class="text-gray-400">© 2025 TANAL SA LOGEMENT. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

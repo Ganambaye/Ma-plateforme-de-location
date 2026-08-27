@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="200" height="60" rx="12" fill="#1a73e8" />
+  <path d="M25 45 L40 28 L55 45" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="38" y="35" width="12" height="12" rx="2" fill="#fbbf24" />
+  <path d="M42 35 L42 28 M36 35 L36 28 M48 35 L48 28" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+  <text x="70" y="38" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Teranga</text>
+  <text x="70" y="53" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#fbbf24">Immo</text>
+  <circle cx="170" cy="30" r="8" fill="#34a853" />
+  <path d="M167 30 L169 32 L173 28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
