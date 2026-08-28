@@ -1,13 +1,16 @@
 ﻿const OpenAI = require('openai');
 
-const openai = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
-  baseURL: 'https://api.groq.com/openai/v1',
-});
+const getClient = () => {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) return null;
+  return new OpenAI({ apiKey, baseURL: 'https://api.groq.com/openai/v1' });
+};
 
 const MODEL = 'groq/compound-mini';
 
 const generateAdDescription = async ({ type, prix, quartier, commodites = [] }) => {
+  const openai = getClient();
+  if (!openai) return "Description temporairement indisponible.";
   try {
     const prompt = `Tu es un expert en immobilier. Génère une description d'annonce professionnelle, claire et vendeuse pour un logement à Dakar au Sénégal.
 
@@ -37,11 +40,13 @@ Retourne UNIQUEMENT la description, sans titre ni autre texte.`;
     return response.choices[0].message.content.trim();
   } catch (err) {
     console.error('Erreur generateAdDescription:', err.message);
-    throw new Error("Impossible de générer la description");
+    return "Description temporairement indisponible.";
   }
 };
 
 const parseNaturalLanguageSearch = async (query) => {
+  const openai = getClient();
+  if (!openai) return { type: null, quartier: null, prixMax: null, wifi: null, meuble: null };
   try {
     const prompt = `Tu es un assistant de recherche immobilière. Extrais les filtres de recherche d'une requête en langage naturel et retourne un objet JSON strict avec ces champs (met null si non mentionné) :
 - type: "chambre" | "studio" | "appartement" | null
@@ -82,6 +87,8 @@ Retourne UNIQUEMENT le JSON, sans explication ni markdown.`;
 };
 
 const moderateAdContent = async (text) => {
+  const openai = getClient();
+  if (!openai) return { isValid: true, issues: [] };
   try {
     const prompt = `Tu es un modérateur d'annonces immobilières. Analyse le texte suivant et détecte les problèmes potentiels :
 
@@ -114,6 +121,8 @@ Sois strict sur les tentatives d'arnaque. Retourne UNIQUEMENT le JSON, sans expl
 };
 
 const chatAssistant = async (message, userRole = 'etudiant', context = {}) => {
+  const openai = getClient();
+  if (!openai) return "Désolé, je rencontre un problème technique. Veuillez réessayer plus tard ou contactez notre support au +221 77 123 45 67.";
   try {
     const systemPrompt = `Tu es l'assistant virtuel officiel de TANAL SA LOGEMENT, la plateforme de référence pour la recherche de logement étudiant à Dakar, Sénégal. Tu connais parfaitement la plateforme, ses fonctionnalités et ses processus. Tes réponses sont nettes, précises et toujours utiles.
 

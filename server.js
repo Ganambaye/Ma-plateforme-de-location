@@ -25,7 +25,10 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+const corsOrigins = process.env.NODE_ENV === 'production'
+  ? [process.env.FRONTEND_URL, 'https://*.vercel.app'].filter(Boolean)
+  : '*';
+app.use(cors({ origin: corsOrigins, credentials: true }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 

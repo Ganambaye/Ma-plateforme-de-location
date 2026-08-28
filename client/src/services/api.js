@@ -1,5 +1,6 @@
 import axios from 'axios';
-const api = axios.create({ baseURL: '/api', headers: { 'Content-Type': 'application/json' }, timeout: 20000 });
+const apiBase = import.meta.env.VITE_API_URL || '/api';
+const api = axios.create({ baseURL: apiBase, headers: { 'Content-Type': 'application/json' }, timeout: 20000 });
 
 const request = async (config) => {
   const maxRetries = 2;
